@@ -1,7 +1,7 @@
 {
   "name": "amp-toolbox-optimizer-benchmark",
   "version": "1.0.0",
-  "description": "",
+  "description": "Optimized AMP vs Original AMP.",
   "devDependencies": {
     "amp-toolbox-optimizer": "^0.1.0",
     "amp-toolbox-runtime-version": "^0.1.0",
