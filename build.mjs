@@ -8,7 +8,11 @@ import runtimeVersion from 'amp-toolbox-runtime-version';
 
 const writeFilePromise = util.promisify(fs.writeFile);
 
-const ampUrl = 'https://news.ameba.jp/amp/entry/20180214-742/';
+const ampUrl = process.argv[2];
+
+if (!ampUrl) {
+  throw new Error('AMP URL is not defined.');
+}
 
 fetch(ampUrl)
   .then(res => res.text())
@@ -26,4 +30,4 @@ fetch(ampUrl)
     ]);
   })
   .then(() => console.log('Well done!'))
-  .catch(() => console.log('Woops! Something went wrong.'));
+  .catch(err => console.log('Woops! Something went wrong.', err));

@@ -10,8 +10,11 @@
     "pretty": "^2.0.0",
     "serve": "^6.4.9"
   },
+  "engines" : {
+    "node" : ">=8.5.0"
+  },
   "scripts": {
-    "start": "npm run build && serve",
+    "start": "serve",
     "build": "node --experimental-modules build.mjs",
     "prettier": "prettier --write 'build.mjs'"
   },
