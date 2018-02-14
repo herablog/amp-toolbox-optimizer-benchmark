@@ -1,0 +1,20 @@
+{
+  "name": "amp-toolbox-optimizer-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "amp-toolbox-optimizer": "^0.1.0",
+    "amp-toolbox-runtime-version": "^0.1.0",
+    "node-fetch": "^2.0.0",
+    "prettier": "1.10.2",
+    "pretty": "^2.0.0",
+    "serve": "^6.4.9"
+  },
+  "scripts": {
+    "start": "npm run build && serve",
+    "build": "node --experimental-modules build.mjs",
+    "prettier": "prettier --write 'build.mjs'"
+  },
+  "license": "MIT",
+  "private": true
+}

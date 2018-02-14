@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+<html lang="ja" i-amphtml-layout="">
+
+  <head>
+    <style amp-runtime="">
+      html {
+        overflow-x: hidden !important
+      }
+
+      body,
+      html {
+        height: auto !important
+      }
+
+      html.i-amphtml-fie {
+        height: 100% !important;
+        width: 100% !important
+      }
+
+      body {
+        margin: 0 !important;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%
+      }
+
+      [hidden] {
+        display: none !important
+      }
+
+      html.i-amphtml-singledoc.i-amphtml-embedded {
+        -ms-touch-action: pan-y;
+        touch-action: pan-y
+      }
+
+      html.i-amphtml-fie&gt;
+      body,
+      html.i-amphtml-singledoc&gt;
+      body {
+        overflow: visible !important;
+        position: relative !important
+      }
+
+      html.i-amphtml-webview&gt;
+      body {
+        overflow-x: hidden !important;
+        overflow-y: visible !important
+      }
+
+      html.i-amphtml-ios-embed-legacy&gt;
+      body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        position: absolute !important
+      }
+
+      html.i-amphtml-ios-embed {
+        overflow-y: auto !important;
+        position: static
+      }
+
+      #i-amphtml-wrapper {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        margin: 0 !important;
+        display: block !important
+      }
+
+      html.i-amphtml-ios-embed.i-amphtml-ios-overscroll,
+      html.i-amphtml-ios-embed.i-amphtml-ios-overscroll&gt;
+      #i-amphtml-wrapper {
+        -webkit-overflow-scrolling: touch !important
+      }
+
+      #i-amphtml-wrapper&gt;
+      body {
+        position: relative !important;
+        border-top: 1px solid transparent !important
+      }
+
+      .i-amphtml-element {
+        display: inline-block
+      }
+
+      .i-amphtml-layout-fixed,
+      [layout=fixed][width][height]:not(.i-amphtml-layout-fixed) {
+        display: inline-block;
+        position: relative
+      }
+
+      .i-amphtml-layout-container,
+      .i-amphtml-layout-fixed-height,
+      .i-amphtml-layout-responsive,
+      [layout=container],
+      [layout=fixed-height][height],
+      [layout=responsive][width][height]:not(.i-amphtml-layout-responsive),
+      [width][height][sizes]:not(.i-amphtml-layout-responsive) {
+        display: block;
+        position: relative
+      }
+
+      .i-amphtml-layout-fill,
+      [layout=fill]:not(.i-amphtml-layout-fill) {
+        display: block;
+        overflow: hidden !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0
+      }
+
+      .i-amphtml-layout-flex-item,
+      [layout=flex-item]:not(.i-amphtml-layout-flex-item) {
+        display: block;
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto
+      }
+
+      .i-amphtml-layout-size-defined {
+        overflow: hidden !important
+      }
+
+      .i-amphtml-layout-awaiting-size {
+        position: absolute !important;
+        top: auto !important;
+        bottom: auto !important
+      }
+
+      i-amphtml-sizer {
+        display: block !important
+      }
+
+      .i-amphtml-fill-content {
+        display: block;
+        height: 0;
+        max-height: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        min-width: 100%;
+        width: 0;
+        margin: auto
+      }
+
+      .i-amphtml-layout-size-defined .i-amphtml-fill-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0
+      }
+
+      .i-amphtml-replaced-content,
+      .i-amphtml-screen-reader {
+        padding: 0 !important;
+        border: none !important
+      }
+
+      .i-amphtml-screen-reader {
+        position: fixed !important;
+        top: 0px !important;
+        left: 0px !important;
+        width: 4px !important;
+        height: 4px !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        display: block !important;
+        visibility: visible !important
+      }
+
+      .i-amphtml-screen-reader~.i-amphtml-screen-reader {
+        left: 8px !important
+      }
+
+      .i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader {
+        left: 12px !important
+      }
+
+      .i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader {
+        left: 16px !important
+      }
+
+      .i-amphtml-unresolved {
+        position: relative;
+        overflow: hidden !important
+      }
+
+      #i-amphtml-wrapper.i-amphtml-scroll-disabled,
+      .i-amphtml-scroll-disabled {
+        overflow-x: hidden !important;
+        overflow-y: hidden !important
+      }
+
+      .i-amphtml-notbuilt,
+      [layout]:not(.i-amphtml-element) {
+        position: relative;
+        overflow: hidden !important;
+        color: transparent !important
+      }
+
+      .i-amphtml-notbuilt:not(.i-amphtml-layout-container)&gt;
+      *,
+      [layout]:not([layout=container]):not(.i-amphtml-element)&gt;
+      * {
+        display: none
+      }
+
+      .i-amphtml-ghost {
+        visibility: hidden !important
+      }
+
+      [layout=nodisplay]:not(.i-amphtml-display) {
+        display: none !important
+      }
+
+      .i-amphtml-element&gt;
+      [placeholder],
+      [layout]:not(.i-amphtml-element)&gt;
+      [placeholder] {
+        display: block
+      }
+
+      .i-amphtml-element&gt;
+      [placeholder].amp-hidden,
+      .i-amphtml-element&gt;
+      [placeholder].hidden {
+        visibility: hidden
+      }
+
+      .i-amphtml-element:not(.amp-notsupported)&gt;
+      [fallback] {
+        display: none
+      }
+
+      .i-amphtml-layout-size-defined&gt;
+      [fallback],
+      .i-amphtml-layout-size-defined&gt;
+      [placeholder] {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 1
+      }
+
+      .i-amphtml-notbuilt&gt;
+      [placeholder] {
+        display: block !important
+      }
+
+      .i-amphtml-hidden-by-media-query {
+        display: none !important
+      }
+
+      .i-amphtml-element-error {
+        background: red !important;
+        color: #fff !important;
+        position: relative !important
+      }
+
+      .i-amphtml-element-error:before {
+        content: attr(error-message)
+      }
+
+      i-amp-scroll-container,
+      i-amphtml-scroll-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block
+      }
+
+      i-amp-scroll-container.amp-active,
+      i-amphtml-scroll-container.amp-active {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch
+      }
+
+      .i-amphtml-loading-container {
+        display: block !important;
+        z-index: 1
+      }
+
+      .i-amphtml-notbuilt&gt;
+      .i-amphtml-loading-container {
+        display: block !important
+      }
+
+      .i-amphtml-loading-container.amp-hidden {
+        visibility: hidden
+      }
+
+      .i-amphtml-loader-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        overflow: hidden !important;
+        background-color: hsla(0, 0%, 59%, 0.2);
+        display: block
+      }
+
+      .i-amphtml-loader-moving-line {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100% !important;
+        background-color: hsla(0, 0%, 59%, 0.65);
+        z-index: 2
+      }
+
+      @-webkit-keyframes i-amphtml-loader-line-moving {
+        0% {
+          -webkit-transform: translateX(-100%);
+          transform: translateX(-100%)
+        }
+        to {
+          -webkit-transform: translateX(100%);
+          transform: translateX(100%)
+        }
+      }
+
+      @keyframes i-amphtml-loader-line-moving {
+        0% {
+          -webkit-transform: translateX(-100%);
+          transform: translateX(-100%)
+        }
+        to {
+          -webkit-transform: translateX(100%);
+          transform: translateX(100%)
+        }
+      }
+
+      .i-amphtml-loader-line.amp-active .i-amphtml-loader-moving-line {
+        -webkit-animation: i-amphtml-loader-line-moving 4s ease infinite;
+        animation: i-amphtml-loader-line-moving 4s ease infinite
+      }
+
+      .i-amphtml-loader {
+        position: absolute;
+        display: block;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        white-space: nowrap
+      }
+
+      .i-amphtml-loader.amp-active .i-amphtml-loader-dot {
+        -webkit-animation: i-amphtml-loader-dots 2s infinite;
+        animation: i-amphtml-loader-dots 2s infinite
+      }
+
+      .i-amphtml-loader-dot {
+        position: relative;
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        margin: 2px;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        will-change: transform
+      }
+
+      .i-amphtml-loader .i-amphtml-loader-dot:first-child {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s
+      }
+
+      .i-amphtml-loader .i-amphtml-loader-dot:nth-child(2) {
+        -webkit-animation-delay: .1s;
+        animation-delay: .1s
+      }
+
+      .i-amphtml-loader .i-amphtml-loader-dot:nth-child(3) {
+        -webkit-animation-delay: .2s;
+        animation-delay: .2s
+      }
+
+      @-webkit-keyframes i-amphtml-loader-dots {
+        0%,
+        to {
+          -webkit-transform: scale(.7);
+          transform: scale(.7);
+          background-color: rgba(0, 0, 0, 0.3)
+        }
+        50% {
+          -webkit-transform: scale(.8);
+          transform: scale(.8);
+          background-color: rgba(0, 0, 0, 0.5)
+        }
+      }
+
+      @keyframes i-amphtml-loader-dots {
+        0%,
+        to {
+          -webkit-transform: scale(.7);
+          transform: scale(.7);
+          background-color: rgba(0, 0, 0, 0.3)
+        }
+        50% {
+          -webkit-transform: scale(.8);
+          transform: scale(.8);
+          background-color: rgba(0, 0, 0, 0.5)
+        }
+      }
+
+      .i-amphtml-element&gt;
+      [overflow] {
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        visibility: hidden
+      }
+
+      .i-amphtml-element&gt;
+      [overflow].amp-visible {
+        visibility: visible
+      }
+
+      template {
+        display: none !important
+      }
+
+      .amp-border-box,
+      .amp-border-box *,
+      .amp-border-box :after,
+      .amp-border-box :before {
+        box-sizing: border-box
+      }
+
+      amp-pixel {
+        display: none !important
+      }
+
+      amp-instagram {
+        padding: 64px 0px 0px !important;
+        background-color: #fff
+      }
+
+      amp-analytics {
+        position: fixed !important;
+        top: 0 !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        visibility: hidden
+      }
+
+      amp-iframe iframe {
+        box-sizing: border-box !important
+      }
+
+      [amp-access][amp-access-hide],
+      amp-experiment,
+      amp-live-list&gt;
+      [update],
+      amp-share-tracking,
+      form [submit-error],
+      form [submit-success],
+      form [submitting] {
+        display: none
+      }
+
+      .i-amphtml-jank-meter {
+        position: fixed;
+        background-color: rgba(232, 72, 95, 0.5);
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        font-size: 16px;
+        z-index: 1000;
+        padding: 5px
+      }
+
+      i-amp-video-mask,
+      i-amphtml-video-mask {
+        z-index: 1
+      }
+
+      .amp-video-eq {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        bottom: 7px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 12px;
+        opacity: 0.8;
+        overflow: hidden;
+        position: absolute;
+        right: 7px;
+        width: 20px;
+        z-index: 1
+      }
+
+      .amp-video-eq .amp-video-eq-col {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 100%;
+        margin-right: 1px;
+        position: relative
+      }
+
+      .amp-video-eq .amp-video-eq-col div {
+        -webkit-animation-name: amp-video-eq-animation;
+        animation-name: amp-video-eq-animation;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        background-color: #fafafa;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        will-change: transform;
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused
+      }
+
+      .amp-video-eq[unpausable] .amp-video-eq-col div {
+        -webkit-animation-name: none;
+        animation-name: none
+      }
+
+      .amp-video-eq[unpausable].amp-video-eq-play .amp-video-eq-col div {
+        -webkit-animation-name: amp-video-eq-animation;
+        animation-name: amp-video-eq-animation
+      }
+
+      .amp-video-eq.amp-video-eq-play .amp-video-eq-col div {
+        -webkit-animation-play-state: running;
+        animation-play-state: running
+      }
+
+      .amp-video-eq-1-1 {
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s
+      }
+
+      .amp-video-eq-1-1,
+      .amp-video-eq-1-2 {
+        -webkit-transform: translateY(60%);
+        transform: translateY(60%)
+      }
+
+      .amp-video-eq-1-2 {
+        -webkit-animation-duration: 0.45s;
+        animation-duration: 0.45s
+      }
+
+      .amp-video-eq-2-1 {
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s
+      }
+
+      .amp-video-eq-2-1,
+      .amp-video-eq-2-2 {
+        -webkit-transform: translateY(30%);
+        transform: translateY(30%)
+      }
+
+      .amp-video-eq-2-2 {
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s
+      }
+
+      .amp-video-eq-3-1 {
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s
+      }
+
+      .amp-video-eq-3-1,
+      .amp-video-eq-3-2 {
+        -webkit-transform: translateY(70%);
+        transform: translateY(70%)
+      }
+
+      .amp-video-eq-3-2 {
+        -webkit-animation-duration: 0.35s;
+        animation-duration: 0.35s
+      }
+
+      .amp-video-eq-4-1 {
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s
+      }
+
+      .amp-video-eq-4-1,
+      .amp-video-eq-4-2 {
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%)
+      }
+
+      .amp-video-eq-4-2 {
+        -webkit-animation-duration: 0.25s;
+        animation-duration: 0.25s
+      }
+
+      @-webkit-keyframes amp-video-eq-animation {
+        0% {
+          -webkit-transform: translateY(100%);
+          transform: translateY(100%)
+        }
+        to {
+          -webkit-transform: translateY(0);
+          transform: translateY(0)
+        }
+      }
+
+      @keyframes amp-video-eq-animation {
+        0% {
+          -webkit-transform: translateY(100%);
+          transform: translateY(100%)
+        }
+        to {
+          -webkit-transform: translateY(0);
+          transform: translateY(0)
+        }
+      }
+
+      .i-amphtml-dockable-video {
+        padding: 0px;
+        margin: 0px;
+        -webkit-transition: background-color 1s;
+        transition: background-color 1s
+      }
+
+      .i-amphtml-dockable-video&gt;
+      iframe.i-amphtml-dockable-video-minimizing,
+      .i-amphtml-dockable-video&gt;
+      video.i-amphtml-dockable-video-minimizing {
+        position: fixed;
+        height: auto;
+        overflow: hidden;
+        z-index: 16;
+        will-change: transform;
+        -webkit-transform: scale(0.6) translateX(20px) translateY(20px);
+        transform: scale(0.6) translateX(20px) translateY(20px);
+        border-radius: 6px;
+        box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, 0.1);
+        -webkit-transition: box-shadow 1s, border-radius 1s;
+        transition: box-shadow 1s, border-radius 1s;
+        min-width: initial !important;
+        min-height: initial !important;
+        margin: initial !important
+      }
+
+      amp-accordion {
+        display: block !important
+      }
+
+      amp-accordion&gt;
+      section {
+        float: none !important
+      }
+
+      amp-accordion&gt;
+      section&gt;
+      * {
+        float: none !important;
+        display: block !important;
+        overflow: hidden !important;
+        position: relative !important
+      }
+
+      .i-amphtml-accordion-content,
+      .i-amphtml-accordion-header,
+      amp-accordion,
+      amp-accordion&gt;
+      section {
+        margin: 0
+      }
+
+      .i-amphtml-accordion-header {
+        cursor: pointer;
+        background-color: #efefef;
+        padding-right: 20px;
+        border: 1px solid #dfdfdf
+      }
+
+      amp-accordion&gt;
+      section&gt;
+      :last-child {
+        display: none !important
+      }
+
+      amp-accordion&gt;
+      section[expanded]&gt;
+      :last-child {
+        display: block !important
+      }
+
+      amp-story-page,
+      amp-story[standalone] {
+        display: block !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        width: 100% !important
+      }
+
+      amp-story[standalone] {
+        background-color: #fff !important;
+        position: relative !important
+      }
+
+      amp-story-page {
+        background-color: #757575
+      }
+
+      amp-story .i-amphtml-loader {
+        display: none !important
+      }
+
+      amp-date-picker {
+        display: block
+      }
+
+      amp-date-picker:not([i-amphtml-date-picker-attached]) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #dbdbdb
+      }
+
+      amp-date-picker[type=range]:not([i-amphtml-date-picker-attached]) {
+        width: 400px
+      }
+
+      amp-date-picker[i-amphtml-date-picker-attached] [amp-date-placeholder],
+      amp-date-picker[type=range][i-amphtml-date-picker-attached] [amp-date-placeholder-end],
+      amp-date-picker[type=range][i-amphtml-date-picker-attached] [amp-date-placeholder-start] {
+        display: none
+      }
+
+      amp-date-picker [amp-date-placeholder],
+      amp-date-picker[type=range] [amp-date-placeholder-end],
+      amp-date-picker[type=range] [amp-date-placeholder-start] {
+        border: 0;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 24px;
+        color: #333;
+        font-family: sans-serif;
+        padding: 4px 8px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden
+      }
+
+      amp-date-picker[type=range] [amp-date-placeholder-end]::-webkit-input-placeholder,
+      amp-date-picker[type=range] [amp-date-placeholder-start]::-webkit-input-placeholder,
+      amp-date [amp-date-placeholder]::-webkit-input-placeholder {
+        color: #757575
+      }
+
+      amp-date-picker[type=range] [amp-date-placeholder-end]::-ms-input-placeholder,
+      amp-date-picker[type=range] [amp-date-placeholder-start]::-ms-input-placeholder,
+      amp-date [amp-date-placeholder]::-ms-input-placeholder {
+        color: #757575
+      }
+
+      amp-date-picker[type=range] [amp-date-placeholder-end]::placeholder,
+      amp-date-picker[type=range] [amp-date-placeholder-start]::placeholder,
+      amp-date [amp-date-placeholder]::placeholder {
+        color: #757575
+      }
+
+      /*# sourceURL=/css/amp.css*/
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="referrer" content="origin">
+    <meta name="theme-color" content="#efefef">
+    <meta property="fb:admins" content="100004632281440">
+    <meta property="fb:app_id" content="320165361430339">
+    <meta name="amp-google-client-id-api" content="googleanalytics">
+    <meta name="description" content="女優の大和田美帆が14日、自身のアメブロを更新。大和田のブログを読んでいると明かした稲垣吾郎に感謝した。
+
+はじめに「吾郎さん吾郎さーん!!稲垣吾郎さーん!!」と呼びかけた大和田。稲垣は自身のブログを...">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@newsameba">
+    <meta name="twitter:url" content="https://news.ameba.jp/entry/20180214-742/">
+    <meta name="twitter:title" content="大和田美帆、稲垣吾郎が子どもに「パパだよー」とドッキリ発言 - Ameba News [アメーバニュース]">
+    <meta name="twitter:description" content="女優の大和田美帆が14日、自身のアメブロを更新。大和田のブログを読んでいると明かした稲垣吾郎に感謝した。
+
+はじめに「吾郎さん吾郎さーん!!稲垣吾郎さーん!!」と呼びかけた大和田。稲垣は自身のブログを...">
+    <meta name="twitter:image" content="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg">
+    <meta name="og:url" content="https://news.ameba.jp/entry/20180214-742/">
+    <meta name="og:type" content="article">
+    <meta name="og:site_name" content="Ameba News [アメーバニュース]">
+    <meta name="og:title" content="大和田美帆、稲垣吾郎が子どもに「パパだよー」とドッキリ発言 - Ameba News [アメーバニュース]">
+    <meta name="og:description" content="女優の大和田美帆が14日、自身のアメブロを更新。大和田のブログを読んでいると明かした稲垣吾郎に感謝した。
+
+はじめに「吾郎さん吾郎さーん!!稲垣吾郎さーん!!」と呼びかけた大和田。稲垣は自身のブログを...">
+    <meta name="og:image" content="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg">
+    <link rel="preload" href="https://cdn.ampproject.org/rtv/001518441587106/v0.js" as="script">
+    <script async="" src="https://cdn.ampproject.org/rtv/001518441587106/v0.js"></script>
+    <script async="" custom-element="amp-dynamic-css-classes" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-dynamic-css-classes-0.1.js"></script>
+    <script async="" custom-element="amp-analytics" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-analytics-0.1.js"></script>
+    <script async="" custom-element="amp-list" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-list-0.1.js"></script>
+    <script async="" custom-element="amp-form" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-form-0.1.js"></script>
+    <script async="" custom-element="amp-sidebar" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-sidebar-0.1.js"></script>
+    <script async="" custom-element="amp-ad" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-ad-0.1.js"></script>
+    <script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async="" custom-element="amp-timeago" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-timeago-0.1.js"></script>
+    <script async="" custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-sticky-ad-1.0.js"></script>
+    <script async="" custom-element="amp-iframe" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-iframe-0.1.js"></script>
+    <script async="" custom-element="amp-lightbox" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-lightbox-0.1.js"></script>
+    <script async="" custom-template="amp-mustache" src="https://cdn.ampproject.org/rtv/001518441587106/v0/amp-mustache-0.1.js"></script>
+    <link rel="shortcut icon" href="https://c.stat100.ameba.jp/common_style/img/favicon.ico">
+    <style amp-custom="">
+      /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+
+      html {
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%
+      }
+
+      body {
+        margin: 0
+      }
+
+      article,
+      aside,
+      footer,
+      header,
+      nav,
+      section {
+        display: block
+      }
+
+      h1 {
+        font-size: 2em;
+        margin: .67em 0
+      }
+
+      figcaption,
+      figure,
+      main {
+        display: block
+      }
+
+      figure {
+        margin: 1em 40px
+      }
+
+      hr {
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible
+      }
+
+      pre {
+        font-family: monospace, monospace;
+        font-size: 1em
+      }
+
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects
+      }
+
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted
+      }
+
+      b,
+      strong {
+        font-weight: inherit;
+        font-weight: bolder
+      }
+
+      code,
+      kbd,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em
+      }
+
+      dfn {
+        font-style: italic
+      }
+
+      mark {
+        background-color: #ff0;
+        color: #000
+      }
+
+      small {
+        font-size: 80%
+      }
+
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline
+      }
+
+      sub {
+        bottom: -.25em
+      }
+
+      sup {
+        top: -.5em
+      }
+
+      audio,
+      video {
+        display: inline-block
+      }
+
+      audio:not([controls]) {
+        display: none;
+        height: 0
+      }
+
+      img {
+        border-style: none
+      }
+
+      svg:not(:root) {
+        overflow: hidden
+      }
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: sans-serif;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0
+      }
+
+      button,
+      input {
+        overflow: visible
+      }
+
+      button,
+      select {
+        text-transform: none
+      }
+
+      [type=reset],
+      [type=submit],
+      button,
+      html [type=button] {
+        -webkit-appearance: button
+      }
+
+      [type=button]::-moz-focus-inner,
+      [type=reset]::-moz-focus-inner,
+      [type=submit]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0
+      }
+
+      [type=button]:-moz-focusring,
+      [type=reset]:-moz-focusring,
+      [type=submit]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText
+      }
+
+      fieldset {
+        padding: .35em .75em .625em
+      }
+
+      legend {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal
+      }
+
+      progress {
+        display: inline-block;
+        vertical-align: baseline
+      }
+
+      textarea {
+        overflow: auto
+      }
+
+      [type=checkbox],
+      [type=radio] {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0
+      }
+
+      [type=number]::-webkit-inner-spin-button,
+      [type=number]::-webkit-outer-spin-button {
+        height: auto
+      }
+
+      [type=search] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px
+      }
+
+      [type=search]::-webkit-search-cancel-button,
+      [type=search]::-webkit-search-decoration {
+        -webkit-appearance: none
+      }
+
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit
+      }
+
+      details,
+      menu {
+        display: block
+      }
+
+      summary {
+        display: list-item
+      }
+
+      canvas {
+        display: inline-block
+      }
+
+      [hidden],
+      template {
+        display: none
+      }
+
+      body {
+        color: #333;
+        font-family: sans-serif;
+        line-height: 1.5;
+        word-wrap: break-word;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, .05);
+        word-break: break-word
+      }
+
+      p {
+        margin: 0
+      }
+
+      a {
+        color: #4290c6;
+        text-decoration: none
+      }
+
+      ul {
+        list-style: none;
+        padding: 0
+      }
+
+      .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1080px
+      }
+
+      .main {
+        min-height: 100vh;
+        width: 100%
+      }
+
+      .asides,
+      .main {
+        max-width: 648px
+      }
+
+      .asides {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1
+      }
+
+      @media screen and (min-width:648px) {
+        .container {
+          margin-top: 1rem
+        }
+        .main {
+          min-height: 100vh
+        }
+        .asides {
+          padding-left: .75rem;
+          padding-right: .75rem
+        }
+      }
+
+      @media screen and (display-mode:standalone) {
+        body {
+          padding-top: 44px
+        }
+      }
+
+      ._37Q0g {
+        background: #fff;
+        margin: 0 0 28px;
+        margin: 0 0 1.75rem
+      }
+
+      ._1nEL6 {
+        margin-top: 0
+      }
+
+      ._2BxIL {
+        margin-bottom: 0
+      }
+
+      ._2i3sP {
+        font-size: 16px;
+        font-size: 1rem;
+        margin: 16px 0;
+        margin: 1rem 0;
+        padding: 0 8px;
+        padding: 0 .5rem
+      }
+
+      aside ._2i3sP,
+      section ._2i3sP {
+        margin-top: 0
+      }
+
+      ._27lJu {
+        margin: 0 2px 0 0;
+        vertical-align: bottom
+      }
+
+      ._2YHPk {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+      }
+
+      ._2YHPk amp-ad {
+        margin: 24px 0;
+        margin: 1.5rem 0
+      }
+
+      ._3_7Ns amp-ad {
+        margin-top: 0
+      }
+
+      .R7hJ0 amp-ad {
+        margin-bottom: 0
+      }
+
+      ._1z1dP {
+        border: 1px solid #e2e2e2;
+        margin: 24px 0;
+        margin: 1.5rem 0
+      }
+
+      ._1z1dP:before {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #757575;
+        content: "No Image";
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 12px;
+        font-size: .75rem;
+        height: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%
+      }
+
+      ._2uVs3 amp-iframe {
+        margin: 24px 0;
+        margin: 1.5rem 0
+      }
+
+      ._1Jgj7 amp-iframe {
+        margin-top: 0
+      }
+
+      .Nwer7 amp-iframe {
+        margin-bottom: 0
+      }
+
+      ._2pFDB {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #efefef;
+        border: none;
+        border-radius: 0;
+        color: #333;
+        display: block;
+        font-size: 13px;
+        font-size: .8125rem;
+        font-weight: 700;
+        padding: 12px 0;
+        padding: .75rem 0;
+        position: relative;
+        width: 100%
+      }
+
+      ._2pFDB,
+      ._25vtB {
+        text-align: center
+      }
+
+      ._25vtB {
+        color: #757575;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 22px;
+        flex: 0 0 22px;
+        font-size: 14px;
+        font-size: .875rem;
+        width: 22px
+      }
+
+      ._1IFom {
+        color: #cea65c
+      }
+
+      ._1K0rv {
+        color: #e2e2e2
+      }
+
+      ._3chtR {
+        color: #b98353
+      }
+
+      ._2hmkt {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #757575;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 13px;
+        font-size: .8125rem;
+        height: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%
+      }
+
+      ._2ru6m {
+        border-bottom: 1px solid #e2e2e2
+      }
+
+      ._2ru6m:last-child,
+      ._2ru6m:last-of-type {
+        border: none
+      }
+
+      ._12GQZ {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #333;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 76px;
+        overflow: hidden;
+        padding: 8px 12px;
+        padding: .5rem .75rem
+      }
+
+      ._12GQZ>* {
+        margin-right: 12px;
+        margin-right: .75rem
+      }
+
+      ._3WA_Z {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        height: 100%
+      }
+
+      ._3iX37 [fallback] {
+        border: 1px solid #e2e2e2;
+        position: relative
+      }
+
+      ._3iX37 [fallback]:before {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #757575;
+        content: "No Image";
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 10px;
+        font-size: .625rem;
+        height: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%
+      }
+
+      ._3enER {
+        -ms-flex-item-align: start;
+        align-self: flex-start
+      }
+
+      .DPgwU {
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        font-size: 14px;
+        font-size: .875rem;
+        font-weight: 700;
+        -webkit-line-clamp: 2;
+        line-height: 1.3;
+        margin: 0 0 8px;
+        margin: 0 0 .5rem;
+        overflow: hidden
+      }
+
+      ._3KFRE {
+        color: #757575;
+        font-size: 10px;
+        font-size: .625rem
+      }
+
+      ._1RRIn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        color: #757575;
+        font-size: 15px;
+        font-size: .9375rem;
+        padding: 16px 0;
+        padding: 1rem 0;
+        width: 100%
+      }
+
+      ._1RRIn,
+      ._2cl__ {
+        display: block;
+        text-align: center
+      }
+
+      ._2cl__ {
+        background: #efefef;
+        border-radius: 3px;
+        color: #333;
+        font-size: 13px;
+        font-size: .8125rem;
+        font-weight: 700;
+        margin: 4px 12px 0;
+        margin: .25rem .75rem 0;
+        padding: 12px 0;
+        padding: .75rem 0
+      }
+
+      ._3uB77 {
+        border: none
+      }
+
+      ._3uB77 ._12GQZ {
+        height: 61px;
+        position: relative
+      }
+
+      ._3uB77 ._12GQZ:before {
+        background: #e2e2e2;
+        bottom: 1px;
+        content: "";
+        height: 1px;
+        left: 80px;
+        position: absolute;
+        width: 100%
+      }
+
+      ._3uB77:last-child ._12GQZ:before {
+        display: none
+      }
+
+      ._3uB77 ._3WA_Z {
+        height: auto
+      }
+
+      ._3uB77 ._3iX37 {
+        margin-right: 16px;
+        margin-right: 1rem
+      }
+
+      ._3uB77 ._3enER {
+        -ms-flex-item-align: center;
+        align-self: center
+      }
+
+      ._3uB77 .DPgwU {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+      }
+
+      ._89E8n {
+        position: relative
+      }
+
+      ._2p2HW img {
+        filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.5" /><feFuncG type="linear" slope="0.5" /><feFuncB type="linear" slope="0.5" /></feComponentTransfer><feGaussianBlur stdDeviation="5" /></filter></svg>#filter');
+        -webkit-filter: brightness(50%) blur(5px);
+        filter: brightness(50%) blur(5px);
+        -o-object-fit: cover;
+        object-fit: cover;
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05)
+      }
+
+      .nwAQX,
+      .nwAQX img {
+        position: relative;
+        top: -100%
+      }
+
+      .nwAQX img {
+        -o-object-fit: contain;
+        object-fit: contain
+      }
+
+      @media screen and (-ms-high-contrast:none) {
+        ._2p2HW,
+        ::-ms-backdrop {
+          background: #f8f8f8
+        }
+        ._2p2HW img,
+        ::-ms-backdrop {
+          display: none
+        }
+        .nwAQX img,
+        ::-ms-backdrop {
+          min-width: auto;
+          width: auto
+        }
+      }
+
+      ._3QVOR {
+        display: none
+      }
+
+      @media screen and (min-width:648px) {
+        ._3QVOR {
+          -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          margin: 0
+        }
+        ._35CHy {
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1
+        }
+        ._23wcS {
+          color: #333;
+          display: block;
+          font-size: .9375rem;
+          padding: .8rem 0;
+          text-align: center
+        }
+        ._143MZ ._23wcS {
+          border-bottom: 2px solid #3890f1;
+          color: #3890f1
+        }
+      }
+
+      ._3ZMW1 {
+        background: #fff;
+        border-bottom: 1px solid #e2e2e2;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 44px;
+        width: 100%
+      }
+
+      ._3YfM4 {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: none;
+        border: none;
+        margin: 0;
+        width: 48px
+      }
+
+      ._3uUtD {
+        vertical-align: bottom
+      }
+
+      ._3BB40 {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+        text-indent: -44px
+      }
+
+      ._2m-5N {
+        height: 25px;
+        padding: 0 0 0 4px;
+        vertical-align: bottom;
+        width: 133px
+      }
+
+      ._3ZT0m {
+        display: none
+      }
+
+      @media screen and (min-width:648px) {
+        ._3ZMW1 {
+          height: 80px;
+          padding: 0 2rem
+        }
+        ._3YfM4 {
+          display: none
+        }
+        ._3BB40 {
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          text-indent: 0
+        }
+        ._2m-5N {
+          height: 42px;
+          padding: 0;
+          vertical-align: baseline;
+          width: 219px
+        }
+        ._1AN5i,
+        ._3ZT0m {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex
+        }
+        ._1AN5i {
+          border: 1px solid #e2e2e2;
+          border-radius: 2px
+        }
+        ._39IkG {
+          border: none;
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          font-size: .8125rem;
+          height: 36px;
+          padding: 0 .75rem;
+          width: 25vw
+        }
+        ._8V1ca {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: #333;
+          border: none;
+          border-radius: 2px;
+          color: #fff;
+          font-size: .6875rem;
+          height: 24px;
+          margin: 0 .75rem;
+          width: 44px
+        }
+      }
+
+      @media screen and (display-mode:standalone) {
+        ._3ZMW1 {
+          left: 0;
+          position: fixed;
+          top: 0;
+          z-index: 11
+        }
+      }
+
+      ._34fu2 {
+        display: none
+      }
+
+      @media screen and (min-width:648px) {
+        ._34fu2 {
+          background: #333;
+          display: block;
+          margin: 0;
+          width: 100%
+        }
+        ._1G1vI {
+          display: inline-block
+        }
+        ._2arik {
+          color: #ccc;
+          font-size: .9375rem;
+          font-weight: 700;
+          height: 40px;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          line-height: 2.5rem;
+          padding: 0 1.5rem
+        }
+        ._2SEtR {
+          background: #3890f1
+        }
+        ._2SEtR ._2arik {
+          color: #fff
+        }
+      }
+
+      ._23h-R {
+        display: none
+      }
+
+      @media screen and (min-width:648px) {
+        ._23h-R {
+          -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          margin: 0
+        }
+        ._35CHy {
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1
+        }
+        ._23wcS {
+          color: #333;
+          display: block;
+          font-size: .9375rem;
+          padding: .8rem 0;
+          text-align: center
+        }
+        ._3NIVr ._23wcS {
+          border-bottom: 2px solid #3890f1;
+          color: #3890f1
+        }
+      }
+
+      ._2w6TM {
+        background: #fff;
+        max-width: 50em
+      }
+
+      ._2sLTb {
+        font-size: 19px;
+        font-size: 1.1875rem;
+        line-height: 1.4;
+        margin: 16px 16px 0;
+        margin: 1rem 1rem 0
+      }
+
+      ._2w6TM>p {
+        margin: 24px 16px;
+        margin: 1.5rem 1rem
+      }
+
+      p._1VxBr {
+        margin: 0 16px;
+        margin: 0 1rem
+      }
+
+      ._3RZru {
+        color: #757575
+      }
+
+      ._3RZru,
+      .dxX2N {
+        font-size: 10px;
+        font-size: .625rem
+      }
+
+      ._1Nnq8 {
+        color: #757575;
+        display: block
+      }
+
+      ._1lyXb {
+        margin: 12px 16px 0;
+        margin: .75rem 1rem 0;
+        overflow: hidden
+      }
+
+      ._2FlwY {
+        cursor: pointer;
+        height: 160px
+      }
+
+      ._36vi6 {
+        background: #f8f8f8;
+        height: 100%;
+        text-align: center
+      }
+
+      ._3-R4r {
+        font-size: 10px;
+        font-size: .625rem;
+        margin: 8px 8px 0;
+        margin: .5rem .5rem 0
+      }
+
+      .ccw7o {
+        background: #000;
+        background: rgba(0, 0, 0, .8)
+      }
+
+      ._30B-R {
+        height: 100%;
+        margin: 0;
+        position: relative;
+        width: 100%
+      }
+
+      .ccw7o img {
+        -o-object-fit: contain;
+        object-fit: contain
+      }
+
+      ._2XU_O {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 14px;
+        font-size: .875rem;
+        font-weight: 700;
+        left: 0;
+        padding: 8px 12px;
+        padding: .5rem .75rem;
+        position: fixed;
+        width: calc(100% - 44px)
+      }
+
+      ._2XU_O,
+      .vM0SC {
+        background: #000;
+        background: rgba(0, 0, 0, .8);
+        bottom: 0;
+        height: 82px
+      }
+
+      .vM0SC {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        width: 46px
+      }
+
+      .vM0SC amp-img {
+        border-left: 1px solid #858585
+      }
+
+      ._2w6TM .amp-img-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 250px;
+        width: 100%
+      }
+
+      ._2w6TM .amp-img-container img {
+        -o-object-fit: contain;
+        object-fit: contain
+      }
+
+      ._2w6TM amp-iframe [placeholder] {
+        padding: 50px
+      }
+
+      @media screen and (min-width:648px) {
+        ._2sLTb {
+          font-size: 1.75rem
+        }
+      }
+
+      ._108_d {
+        margin: 0 16px 16px;
+        margin: 0 1rem 1rem
+      }
+
+      ._3Fs6_ {
+        font-size: 16px;
+        font-size: 1rem
+      }
+
+      ._2ytoR {
+        margin: 0
+      }
+
+      ._14xeM {
+        display: inline-block;
+        margin: 0 4.8px 8px 0;
+        margin: 0 .3rem .5rem 0
+      }
+
+      ._3qXxh {
+        background: #efefef;
+        border-radius: 20px;
+        color: #333;
+        display: block;
+        font-size: 11px;
+        font-size: .6875rem;
+        padding: 8px 22px;
+        padding: .5rem 22px
+      }
+
+      ._3pRCW {
+        margin: 0 0 32px;
+        margin: 0 0 2rem
+      }
+
+      ._3UrOG {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 16px 16px;
+        margin: 0 1rem 1rem
+      }
+
+      ._2La-_ {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+        margin: 0 4px;
+        margin: 0 .25rem;
+        text-align: center
+      }
+
+      ._1xy_s {
+        color: #757575;
+        font-size: 10px;
+        font-size: .625rem
+      }
+
+      ._1eDFe {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 4px;
+        display: block;
+        padding: 4px 0;
+        padding: .25rem 0;
+        width: 100%
+      }
+
+      ._1gNkA {
+        background: #00b900
+      }
+
+      ._1bXPV {
+        background: #008fde
+      }
+
+      ._3KYIv {
+        background: #1da1f2
+      }
+
+      ._1oRUs {
+        background: #3b5998
+      }
+
+      ._3hdHe {
+        background: #efefef;
+        border-radius: 8px;
+        margin: 0 16px;
+        margin: 0 1rem;
+        padding: 16px 0;
+        padding: 1rem 0
+      }
+
+      ._3_YDD {
+        font-size: 15px;
+        font-size: .9375rem;
+        font-weight: 700;
+        margin: 0 0 16px;
+        margin: 0 0 1rem;
+        text-align: center;
+        width: 100%
+      }
+
+      ._3VLYN {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 8px;
+        margin: 0 .5rem
+      }
+
+      ._1Jir0 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+        margin: 0 4px;
+        margin: 0 .25rem;
+        text-align: center
+      }
+
+      ._1davO {
+        background: #1da1f2
+      }
+
+      ._2BIWg {
+        background: #3b5998
+      }
+
+      ._2H_F7 {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 4px;
+        color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 10px;
+        font-size: .625rem;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 4px 0;
+        padding: .25rem 0
+      }
+
+      ._2HnKH {
+        font-size: 14px;
+        font-size: .875rem;
+        margin: 0 16px 24px;
+        margin: 0 1rem 1.5rem
+      }
+
+      ._2Vdgg,
+      .P9kCY {
+        display: inline-block
+      }
+
+      ._2Vdgg {
+        margin: 0
+      }
+
+      ._1Vf9J {
+        background: #efefef;
+        padding: 16px 0;
+        padding: 1rem 0
+      }
+
+      ._1KkvK {
+        color: #333;
+        display: block;
+        font-size: 13px;
+        font-size: .8125rem;
+        margin: 0 0 24px;
+        margin: 0 0 1.5rem;
+        text-align: center
+      }
+
+      .ftfJB {
+        display: block;
+        margin: 0 auto 4px;
+        margin: 0 auto .25rem;
+        vertical-align: bottom
+      }
+
+      ._23bKJ {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        color: #333;
+        display: block;
+        font-size: 13px;
+        font-size: .8125rem;
+        margin: 0 12px 24px;
+        margin: 0 .75rem 1.5rem;
+        padding: 8px;
+        padding: .5rem;
+        text-align: center
+      }
+
+      ._3j0CS {
+        margin: 0 8px 0 0;
+        margin: 0 .5rem 0 0;
+        vertical-align: bottom
+      }
+
+      ._1DWxO {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 10px;
+        font-size: .625rem;
+        margin: 0
+      }
+
+      ._2fiyU {
+        border-right: 1px solid #e2e2e2;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1
+      }
+
+      ._2fiyU:last-child {
+        border-right: none
+      }
+
+      ._1kH5c {
+        color: #757575;
+        display: block;
+        padding: .4em 0;
+        text-align: center
+      }
+
+      body.amp-viewer:not(.amp-shadow) ._1KkvK {
+        display: none
+      }
+
+      body.amp-viewer:not(.amp-shadow) ._23bKJ {
+        margin-top: 8px;
+        margin-top: .5rem
+      }
+
+      @media screen and (min-width:648px) {
+        ._1Vf9J {
+          margin-top: 2rem
+        }
+        ._1KkvK,
+        ._23bKJ {
+          display: none
+        }
+      }
+
+      ._1bg1A {
+        background: #fff;
+        max-width: 65vw
+      }
+
+      ._2P8qa {
+        background: #efefef;
+        color: #2d8c3c;
+        display: block;
+        font-size: 13px;
+        font-size: .8125rem;
+        padding: 16px;
+        padding: 1rem
+      }
+
+      ._3weYZ {
+        margin: 0 0 16px;
+        margin: 0 0 1rem
+      }
+
+      ._2jyxD {
+        border-bottom: 1px solid #e2e2e2
+      }
+
+      ._3uDam {
+        color: #333;
+        display: block;
+        font-size: 13px;
+        font-size: .8125rem;
+        padding: 17.6px 16px;
+        padding: 1.1rem 1rem
+      }
+
+      ._3hvRv {
+        margin: 0 16px 0 0;
+        margin: 0 1rem 0 0;
+        vertical-align: bottom
+      }
+
+      ._27yWm {
+        margin: 0 8px 16px;
+        margin: 0 .5rem 1rem
+      }
+
+      ._1L6bd {
+        font-weight: 700;
+        margin: 0 0 8px;
+        margin: 0 0 .5rem
+      }
+
+      ._17r99 {
+        margin: 0 8px 0 0;
+        margin: 0 .5rem 0 0;
+        vertical-align: bottom
+      }
+
+      ._1XxCx {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid #e2e2e2;
+        border-radius: 2px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+      }
+
+      .wg6Jv {
+        border: none;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        font-size: 16px;
+        font-size: 1rem;
+        height: 36px;
+        padding: 0 0 0 8px;
+        padding: 0 0 0 .5rem
+      }
+
+      ._1hCme {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #333;
+        border: none;
+        border-radius: 2px;
+        color: #fff;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        font-size: 11px;
+        font-size: .6875rem;
+        height: 24px;
+        margin: 0 8px 0 0;
+        margin: 0 .5rem 0 0;
+        width: 44px
+      }
+
+      ._1Lfy4 {
+        background: #efefef;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 8px;
+        padding: .5rem
+      }
+
+      .EBMDw {
+        min-width: 72px
+      }
+
+      ._3DZDE {
+        margin: 0 0 0 8px;
+        margin: 0 0 0 .5rem
+      }
+
+      ._2ZtUX {
+        color: #757575;
+        margin: 0 0 8px;
+        margin: 0 0 .5rem
+      }
+
+      ._2ZtUX,
+      .rMmPj {
+        font-size: 11px;
+        font-size: .6875rem;
+        font-weight: 700
+      }
+
+      .rMmPj {
+        background: #1da1f2;
+        border-radius: 4px;
+        color: #fff;
+        display: block;
+        padding: 8px 0;
+        padding: .5rem 0;
+        text-align: center
+      }
+
+      ._3_pRC [role=listitem]:first-child ._25vtB {
+        color: #cea65c
+      }
+
+      ._3_pRC [role=listitem]:nth-child(2) ._25vtB {
+        color: #757575
+      }
+
+      ._3_pRC [role=listitem]:nth-child(3) ._25vtB {
+        color: #b98353
+      }
+    </style>
+    <title>大和田美帆、稲垣吾郎が子どもに「パパだよー」とドッキリ発言 - Ameba News [アメーバニュース]</title>
+    <link rel="canonical" href="https://news.ameba.jp/entry/20180214-742/">
+    <link rel="dns-prefetch" href="//news.ameba.jp">
+    <link rel="dns-prefetch" href="//cdn.ampproject.org">
+    <link rel="dns-prefetch" href="//ad.pr.ameba.jp">
+    <link rel="dns-prefetch" href="//api-news.ameba.jp">
+    <link rel="dns-prefetch" href="//ln.ameba.jp">
+    <link rel="dns-prefetch" href="//c.stat100.ameba.jp">
+    <link rel="dns-prefetch" href="//stat100.ameba.jp">
+    <link rel="dns-prefetch" href="//static.aja-recommend.com">
+    <link rel="manifest" href="/amp/manifest.json">
+    <link rel="apple-touch-icon-precomposed" href="https://c.stat100.ameba.jp/common_style/img/sp/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="Ameba News [アメーバニュース]" href="https://news.ameba.jp/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="国内 - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/domestic/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="経済 - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/economy/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="エンタメ - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/entertainment/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="海外 - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/international/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="ブログ発 - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/blog/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="コラム - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/column/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="スポーツ - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/sports/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="IT - 全般 - Ameba News [アメーバニュース]" href="https://news.ameba.jp/category/technology/index.xml">
+    <link rel="alternate" href="jpameblo://news.ameba.jp/20180214-742/">
+    <link rel="alternate" href="android-app://jp.ameba/http/news.ameba.jp/20180214-742/">
+    <link rel="alternate" href="android-app://jp.ameba/jpameblo/news.ameba.jp/20180214-742/">
+    <link rel="alternate" href="ios-app://349442137/jpameblo/news.ameba.jp/20180214-742/">
+    <link rel="amphtml" href="https://news.ameba.jp/amp/entry/20180214-742/">
+  </head>
+
+  <body>
+    <nav class="_3ZMW1" aria-label="ナビゲーションバー">
+      <button class="_3YfM4" on="tap:sidebar">
+        <amp-img class="_3uUtD i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="23" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/menu-hamburger.svg" width="23" style="width:23px;height:23px;" i-amphtml-layout="fixed">
+          <amp-img alt="" fallback="" height="23" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/menu-hamburger.svg" width="23" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:23px;height:23px;" i-amphtml-layout="fixed"></amp-img>
+          <noscript>
+            <img alt="" height="23" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/menu-hamburger.svg" width="23">
+          </noscript>
+        </amp-img>
+      </button>
+      <p class="_3BB40">
+        <a href="/">
+          <svg class="_2m-5N" height="25" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 265 50" width="133">
+            <title>Ameba News</title>
+            <g fill="none" fill-rule="evenodd">
+              <g transform="translate(-28 -7)">
+                <g transform="translate(28 7)">
+                  <path d="m40.451 38.628c-0.513-1.237-1.446-1.816-3.172-2.936-1.299-0.843-2.195-1.988-2.353-4.305-0.205-3.011 0.458-4.878 0.301-9.195-0.119-3.329-1.316-5.841-2.062-7.312-0.878-1.729-1.041-2.957-1.098-4.955-0.053-1.826 0.023-5.881-0.021-7.15-0.046-1.276-0.559-2.098-1.43-2.505-1.06-0.493-2.19-0.339-3.14 0.696-0.873 0.95-2.459 2.65-3.547 3.648-1.426 1.306-2.333 1.594-3.595 1.594s-2.169-0.288-3.594-1.594c-1.09-0.998-2.674-2.698-3.548-3.648-0.95-1.035-2.079-1.189-3.138-0.696-0.874 0.407-1.386 1.229-1.431 2.505-0.046 1.269 0.033 5.324-0.022 7.15-0.057 1.998-0.221 3.226-1.099 4.955-0.746 1.471-1.943 3.983-2.062 7.312-0.155 4.317 0.505 6.184 0.301 9.195-0.156 2.317-1.052 3.462-2.353 4.305-1.724 1.12-2.659 1.699-3.172 2.936-0.36 0.873-0.36 2.129 0.707 2.673 0.676 0.343 1.495 0.277 2.346-0.061 0.659-0.263 1.305-0.653 1.948-0.618 0.492 0.025 0.893 0.29 0.964 1.101 0.072 0.833 0.461 1.189 1.073 1.189 0.495 0 0.966-0.337 1.319-1.258 0.377-0.982 0.564-1.844 1.155-1.829 0.632 0.015 0.784 0.695 0.826 1.651 0.062 1.375-0.468 2.433-1.484 3.373-1.171 1.084-2.054 2.101-1.735 3.431 0.226 0.949 1.26 1.56 2.903 1.641 1.649 0.084 4.363 0.1 6.251 0.054 1.762-0.042 2.772-0.802 2.987-1.81 0.247-1.147-0.417-1.556-0.248-2.499 0.092-0.52 0.59-0.75 1.106-0.75 0.517 0 1.013 0.23 1.107 0.75 0.167 0.943-0.497 1.352-0.25 2.499 0.216 1.008 1.225 1.768 2.988 1.81 1.888 0.046 4.604 0.03 6.251-0.054 1.643-0.081 2.676-0.692 2.903-1.641 0.32-1.33-0.563-2.347-1.736-3.431-1.015-0.94-1.544-1.998-1.483-3.373 0.043-0.956 0.194-1.636 0.827-1.651 0.589-0.015 0.777 0.847 1.153 1.829 0.355 0.921 0.826 1.258 1.321 1.258 0.611 0 1-0.356 1.073-1.189 0.07-0.811 0.472-1.076 0.963-1.101 0.644-0.035 1.289 0.355 1.948 0.618 0.85 0.338 1.669 0.404 2.345 0.061 1.069-0.544 1.069-1.8 0.707-2.673"
+                    fill="#2F873B"></path>
+                  <path d="m12.674 17.454c0.757 0 1.37-0.613 1.37-1.37 0-0.755-0.613-1.368-1.37-1.368-0.755 0-1.368 0.613-1.368 1.368 0 0.757 0.613 1.37 1.368 1.37" fill="#FEFEFE"></path>
+                  <path d="m28.026 19.95c-2.21-1.875-4.493-2.61-7.692-2.604-3.199-6e-3 -5.483 0.729-7.693 2.604-1.518 1.288-2.508 3.861-1.353 5.806 0.581 0.98 1.717 1.767 3.049 1.884 1.769 0.157 2.875-0.48 3.577-1.252 0.672-0.74 1.399-1.443 2.42-1.443 1.022 0 1.749 0.703 2.42 1.443 0.701 0.772 1.807 1.409 3.576 1.252 1.332-0.117 2.468-0.904 3.05-1.884 1.154-1.945 0.164-4.518-1.354-5.806"
+                    fill="#FEFEFE"></path>
+                  <path d="m20.334 30.418c-3.495 0-6.338 2.844-6.338 6.339s2.843 6.34 6.338 6.34 6.337-2.845 6.337-6.34-2.842-6.339-6.337-6.339" fill="#FEFEFE"></path>
+                  <path d="m27.992 17.454c0.755 0 1.37-0.613 1.37-1.37 0-0.755-0.615-1.368-1.37-1.368-0.757 0-1.37 0.613-1.37 1.368 0 0.757 0.613 1.37 1.37 1.37" fill="#FEFEFE"></path>
+                  <path d="m20.334 18.03c-1.777 0-3.167 1.059-3.167 2.411 0 1.353 1.39 2.412 3.167 2.412 1.775 0 3.167-1.059 3.167-2.412 0-1.352-1.392-2.411-3.167-2.411" fill="#2F873B"></path>
+                  <path d="m53.003 27.707v-3.688c0-1.87 0.097-2.501 0.141-2.683 0.473-2.065 2.395-3.561 4.569-3.561 2.175 0 4.097 1.496 4.569 3.559 0.043 0.184 0.141 0.815 0.141 2.685v3.688h-9.42zm4.71-14.752c-4.398 0-8.297 3.07-9.269 7.303-0.181 0.791-0.261 1.951-0.261 3.761v14.209c0 1.332 1.079 2.411 2.409 2.411 1.332 0 2.411-1.079 2.411-2.411v-5.699h9.42v5.699c0 1.332 1.08 2.411 2.41 2.411 1.332 0 2.411-1.079 2.411-2.411v-14.209c0-1.81-0.079-2.97-0.262-3.761-0.971-4.233-4.869-7.303-9.269-7.303z"
+                    fill="#050101"></path>
+                  <path d="m130.98 32.472c-0.055 1.994-1.651 3.617-3.555 3.617-1.958 0-3.529-1.62-3.552-3.554-0.022-1.949-0.025-3.956 0-5.881 0.023-1.927 1.596-3.553 3.552-3.553 1.97 0 3.504 1.582 3.555 3.583 0.053 2.002 0.049 4.099 0 5.788m4.566-5.842c-0.103-4.561-3.62-8.094-8.121-8.094-1.272 0-2.479 0.297-3.552 0.821v-4.111c0-1.261-1.023-2.284-2.284-2.284-1.262 0-2.284 1.023-2.284 2.284v15.619c0 1.586 0.056 3.029 0.328 3.955 0.984 3.37 4.107 5.836 7.792 5.836 4.354 0 7.997-3.614 8.121-8.056 0.05-1.779 0.048-3.93 0-5.97"
+                    fill="#050101"></path>
+                  <path d="m88.026 18.519c-1.773 0-3.392 0.696-4.615 1.835-1.223-1.139-2.841-1.835-4.614-1.835-3.152 0-5.904 2.221-6.693 5.401-0.207 0.828-0.205 1.759-0.205 2.579v11.868c0 1.261 1.023 2.284 2.284 2.284 1.26 0 2.283-1.023 2.283-2.284v-11.871c0-0.474 0-1.192 0.07-1.476 0.283-1.139 1.213-1.934 2.261-1.934 1.285 0 2.33 1.148 2.33 2.559v12.722c0 1.261 1.022 2.284 2.284 2.284 1.261 0 2.283-1.023 2.283-2.284v-12.722c0-1.411 1.046-2.559 2.332-2.559 1.048 0 1.978 0.795 2.26 1.934 0.071 0.284 0.07 1.002 0.07 1.476v11.871c0 1.261 1.021 2.284 2.284 2.284 1.261 0 2.283-1.023 2.283-2.284v-11.868c1e-3 -0.82 1e-3 -1.751-0.204-2.579-0.789-3.18-3.542-5.401-6.693-5.401"
+                    fill="#050101"></path>
+                  <path d="m150.58 30.075c0.021 1.162 0.038 2.301-0.035 3.433-0.08 1.25-1.472 2.594-3.593 2.594-1.947 0-3.592-1.17-3.592-2.552 0-0.577 0-1.646 3.792-2.547 1.22-0.288 2.377-0.578 3.428-0.928m-11.787 3.475c0 3.926 3.661 7.118 8.159 7.118 4.428 0 8.09-3.175 8.16-7.078 0.046-2.614 0.046-5.15 0-7.982-0.068-4.042-3.574-7.089-8.16-7.089-4.065 0-6.63 2.249-7.321 2.939-0.89 0.891-0.89 2.338 0 3.23 0.893 0.891 2.338 0.891 3.23 0 0.269-0.269 1.722-1.602 4.091-1.602 1.798 0 3.219 0.881 3.529 2.117-1.183 0.599-3.266 1.093-4.383 1.357-1.807 0.427-7.305 1.73-7.305 6.99"
+                    fill="#050101"></path>
+                  <path d="m103.96 29.112c-0.021-1.162-0.038-2.297 0.035-3.432 0.08-1.251 1.472-2.593 3.593-2.593 1.947 0 3.593 1.168 3.593 2.554 0 0.575 0 1.646-3.791 2.543-1.222 0.29-2.379 0.58-3.43 0.928m11.788-3.471c0-3.928-3.661-7.121-8.16-7.121-4.43 0-8.088 3.174-8.159 7.077-0.047 2.615-0.047 5.15 0 7.984 0.066 4.041 3.574 7.087 8.159 7.087 4.065 0 6.631-2.249 7.319-2.938 0.893-0.892 0.893-2.337 0-3.229-0.89-0.892-2.337-0.892-3.228 0-0.269 0.267-1.722 1.602-4.091 1.602-1.798 0-3.218-0.883-3.53-2.117 1.182-0.6 3.267-1.093 4.384-1.358 1.807-0.429 7.306-1.731 7.306-6.987"
+                    fill="#050101"></path>
+                  <path d="m181.28 19.363c0.465 0 2.321 0 2.321 2.292 0 1.943-1.189 2.378-2.321 2.378h-16.736c-0.523 0-2.321 0-2.321-2.32 0-1.914 1.189-2.35 2.321-2.35h16.736zm2.205 15.287c0.493 0 2.32 0 2.32 2.349 0 1.973-1.334 2.321-2.32 2.321h-21.233c-0.493 0-2.291 0-2.291-2.35 0-2.32 1.827-2.32 2.291-2.32h21.233z"
+                    fill="#231815"></path>
+                  <path d="m201.78 28.906c0.028-0.116 0.028-0.464 0.028-0.58 0-0.522-0.29-0.58-0.695-0.58h-7.804c-0.898 0-2.001-0.348-2.001-2.002 0-0.58 0.117-2.001 2.001-2.001h10.037c2.001 0 2.901 1.16 2.901 2.813 0 0.639-0.087 1.132-0.116 1.364l-1.247 8.354h3.422c0.784 0 1.973 0.261 1.973 2.001 0 1.712-1.132 2.002-1.973 2.002h-17.433c-0.406 0-2.001 0-2.001-2.002 0-0.87 0.29-2.001 2.001-2.001h9.804l1.103-7.368z"
+                    fill="#231815"></path>
+                  <path d="m235.45 27.166c0.667 0 2.437 0.029 2.437 2.292 0 2.204-1.798 2.204-2.437 2.204h-20.769c-0.609 0-2.436 0-2.436-2.176 0-2.262 1.653-2.32 2.436-2.32h20.769z" fill="#231815"></path>
+                  <path d="m243.02 22.786c-2.146 0-2.263-1.711-2.263-2.233 0-1.219 0.551-2.292 2.263-2.292h13.895c0.986 0 3.451 0 3.451 2.64 0 1.363-0.987 4.438-3.974 8.934 1.219 0.957 3.423 2.871 5.917 5.627 1.074 1.19 1.828 2.089 1.828 3.075 0 1.305-1.219 2.436-2.523 2.436-1.016 0-1.306-0.348-2.815-2.175-2.233-2.727-4.727-4.902-5.22-5.337-4.873 5.424-10.182 8.151-11.545 8.151-1.421 0-2.379-1.364-2.379-2.553s0.552-1.479 2.408-2.407c8.644-4.409 12.618-12.532 12.618-13.605 0-0.261-0.262-0.261-0.668-0.261h-10.993z"
+                    fill="#231815"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+      </p>
+      <form class="_3ZT0m" method="get" action="/search" target="_top">
+        <div class="_1AN5i">
+          <input class="_39IkG" name="query" placeholder="キーワードで検索" value="">
+          <button class="_8V1ca" type="submit">検索</button>
+        </div>
+      </form>
+    </nav>
+    <ul class="_34fu2">
+      <li class="_1G1vI">
+        <a class="_2arik" data-vars-section-id="menu" data-vars-service-id="top" href="/">トップ</a>
+      </li>
+      <li class="_1G1vI">
+        <a class="_2arik" data-vars-section-id="menu" data-vars-service-id="topics" href="/topicsEntryList/0/">トピックス</a>
+      </li>
+      <li class="_1G1vI">
+        <a class="_2arik" data-vars-section-id="menu" data-vars-service-id="new" href="/newEntryList/">新着</a>
+      </li>
+      <li class="_1G1vI">
+        <a class="_2arik" data-vars-section-id="menu" data-vars-service-id="access-ranking" href="/ranking/access/daily/">アクセスランキング</a>
+      </li>
+      <li class="_1G1vI">
+        <a class="_2arik" data-vars-section-id="menu" data-vars-service-id="image-ranking" href="/ranking/imageAccess/daily/">写真ランキング</a>
+      </li>
+    </ul>
+    <nav aria-label="カテゴリーナビゲーション">
+      <ul class="_3QVOR">
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="総合" href="/newEntryList/">総合</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="国内" href="/category/domestic/">国内</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="経済" href="/category/economy/">経済</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="エンタメ" href="/category/entertainment/">エンタメ</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="海外" href="/category/international/">海外</a>
+        </li>
+        <li class="_35CHy _143MZ">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="true" data-vars-section-id="category-tab" data-vars-service-id="ブログ発" href="/category/blog/">ブログ発</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="コラム" href="/category/column/">コラム</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="スポーツ" href="/category/sports/">スポーツ</a>
+        </li>
+        <li class="_35CHy">
+          <a class="_23wcS" aria-describedby="current-page" aria-selected="false" data-vars-section-id="category-tab" data-vars-service-id="IT" href="/category/technology/">IT</a>
+        </li>
+      </ul>
+      <div id="current-page" hidden="">現在のページ</div>
+    </nav>
+    <div class="container">
+      <div class="main">
+        <main class="_2w6TM" role="main">
+          <h1 class="_2sLTb">大和田美帆、稲垣吾郎が子どもに「パパだよー」とドッキリ発言</h1>
+          <p class="_1VxBr">
+            <amp-timeago class="_3RZru i-amphtml-layout-fixed i-amphtml-layout-size-defined" datetime="2018-02-14T08:39:56.000Z" height="12" layout="fixed" locale="ja" width="40" style="width:40px;height:12px;" i-amphtml-layout="fixed">2018-02-14T08:39:56.000Z</amp-timeago>
+            <a class="dxX2N" href="/media/weblog">アメーバニュース/ブログ発</a>
+          </p>
+          <figure class="_1lyXb">
+            <div class="_89E8n _2FlwY" id="news-entry-figure" on="tap:news-entry__lightbox" role="button" tabindex="0">
+              <amp-img class="_2p2HW i-amphtml-layout-fixed-height i-amphtml-layout-size-defined" alt="" height="160" layout="fixed-height" src="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg" srcset="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/t02200123oo.jpg 400w, https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg 640w"
+                style="height:160px;" i-amphtml-layout="fixed-height"></amp-img>
+              <amp-img class="nwAQX i-amphtml-layout-fixed-height i-amphtml-layout-size-defined" alt="" height="160" layout="fixed-height" src="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg" srcset="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/t02200123oo.jpg 400w, https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg 640w"
+                style="height:160px;" i-amphtml-layout="fixed-height"></amp-img>
+              <noscript>
+                <div class="_36vi6">
+                  <img alt="" height="160" src="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg" srcset="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/t02200123oo.jpg 400w, https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg 640w">
+                </div>
+              </noscript>
+            </div>
+            <figcaption class="_3-R4r">※大和田美帆オフィシャルブログ・ヘッダー</figcaption>
+          </figure>
+          <amp-lightbox class="ccw7o i-amphtml-layout-nodisplay" id="news-entry__lightbox" layout="nodisplay" style="display:none;" i-amphtml-layout="nodisplay">
+            <figure class="_30B-R">
+              <amp-img alt="" layout="fill" role="button" on="tap:news-entry-lightbox-caption.toggleVisibility,news-entry-lightbox-close.toggleVisibility" src="https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg" tabindex="0" class="i-amphtml-layout-fill i-amphtml-layout-size-defined"
+                i-amphtml-layout="fill"></amp-img>
+              <figcaption class="_2XU_O" id="news-entry-lightbox-caption">大和田美帆、稲垣吾郎が子どもに「パパだよー」とドッキリ発言</figcaption>
+            </figure>
+            <button class="vM0SC" aria-label="閉じる" id="news-entry-lightbox-close" on="tap:news-entry__lightbox.close" tabindex="0">
+              <amp-img alt="" height="44" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/close.svg" width="44" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:44px;height:44px;" i-amphtml-layout="fixed">
+                <amp-img alt="" fallback="" height="44" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/close.svg" width="44" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:44px;height:44px;" i-amphtml-layout="fixed"></amp-img>
+                <noscript>
+                  <img alt="" height="44" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/close.svg" width="44">
+                </noscript>
+              </amp-img>
+            </button>
+          </amp-lightbox>
+          <p>
+            女優の大和田美帆が14日、自身のアメブロを更新。大和田のブログを読んでいると明かした稲垣吾郎に感謝した。</p>
+          <p>はじめに「吾郎さん　吾郎さーん!!稲垣吾郎さーん!!」と呼びかけた大和田。稲垣は自身のブログをはじめる前から舞台で共演したことがある大和田のブログをチェックしていることをインタビュー記事で語っており、それに答える形で「私のブログを見ているって　インタビューでお話ししてくださったみたいで。ありがとうございます!!」と感謝を述べた。
+            <br>
+
+            <br> 続けて「前に「読んでるよー」と　ご本人から聞いてはいたけれど　99%信じてなくてw」と信じられなかった様子。「公に言ってくださったということは　本当に読んでくれていると思って　いいんですねー！いいんですねー吾郎さーん!!」とうれしそうにつづった。
+            <br>
+
+            <br> また、「読んでもらってると思うと、、緊張して全然内容が浮かばない大和田、、、(いや、毎日読んでるわけじゃないだろうから自意識過剰になっちゃいかんのだけれど)」と稲垣を意識してしまうと明かし、「意識していつもと全く違う　ブログになっていたらつっこんでください」と呼びかけた。
+            <br>
+
+            <br> 稲垣とは2本の舞台で共演したといい「人間的に大大大好きな尊敬する方です」「本当に心から尊敬する方です」と稲垣の人柄を絶賛。続けて「出産後すぐの時に街で偶然お会いしてワガコも会わせることができたときは嬉しかったなー」と振り返り、「「パパだよー」なんて冗談で仰るようなところもお茶目で吾郎さんのステキなところです。もちろん、パパじゃないです（笑）」とドッキリなエピソードをつづった。
+            <br>
+
+            <br> 【関連記事】
+            <br> ・
+            <a href="https://ameblo.jp/miho-ohwada/entry-12352783637.html" target="_blank">goroさん。（大和田美帆オフィシャルブログ）</a>
+            <br> ・
+            <a href="https://news.ameba.jp/entry/20171115-587/">大和田美帆、“ワンオペ育児”流行語ノミネートに「とても悲しいことだなぁ」</a>
+            <br> ・
+
+            <a href="https://news.ameba.jp/entry/20180214-233/">稲垣吾郎「コメントは全部読んでます」BLOG of the year 2017受賞者・ブロガー稲垣のホンネインタビュー</a>
+            <br> ・
+            <a href="https://news.ameba.jp/entry/20180213-708/">稲垣吾郎、くしゃくしゃな笑顔で「お腹がよじれました」</a>
+            <br> ・
+
+            <a href="https://news.ameba.jp/entry/20180206-682/">稲垣吾郎、香取慎吾の誕生日をお祝い「吾郎ちゃんも写真撮りなよ～」に自撮り</a>
+            <br>
+
+
+          </p>
+          <section class="_108_d">
+            <h1 class="_3Fs6_">キーワード</h1>
+            <ul class="_2ytoR">
+              <li class="_14xeM">
+                <a class="_3qXxh" href="/search?query=稲垣吾郎">稲垣吾郎</a>
+              </li>
+              <li class="_14xeM">
+                <a class="_3qXxh" href="/search?query=大和田美帆">大和田美帆</a>
+              </li>
+              <li class="_14xeM">
+                <a class="_3qXxh" href="/search?query=BLOG of the year 2017受賞者">BLOG of the year 2017受賞者</a>
+              </li>
+            </ul>
+          </section>
+          <dl class="_2HnKH">
+            <dt class="P9kCY">カテゴリ：</dt>
+            <dd class="_2Vdgg">
+              <a href="/category/blog">ブログ発</a>
+            </dd>
+          </dl>
+          <aside class="_2YHPk _3_7Ns">
+            <amp-ad type="doubleclick" data-slot="/7765/amp_amebanews_entryrectangle" height="280" width="336" id="news-entry-end" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:336px;height:280px;" i-amphtml-layout="fixed">
+              <div placeholder=""></div>
+              <a fallback="" href="/">
+                <amp-img alt="芸能ネタ、ウワサの新商品、今日の話題を厳選してお届け。Amebaニュース。" layout="responsive" src="https://stat100.ameba.jp/news/common_sp/img/banner-news-600x500-01.png" height="250" width="300" class="i-amphtml-layout-responsive i-amphtml-layout-size-defined"
+                  i-amphtml-layout="responsive">
+                  <i-amphtml-sizer style="display:block;padding-top:83.3333%;"></i-amphtml-sizer>
+                </amp-img>
+              </a>
+            </amp-ad>
+          </aside>
+          <div class="_3pRCW">
+            <ul class="_3UrOG">
+              <li class="_2La-_">
+                <a class="_1xy_s" data-vars-section-id="social-share" data-vars-service-id="line" href="http://line.me/R/msg/text/?%E5%A4%A7%E5%92%8C%E7%94%B0%E7%BE%8E%E5%B8%86%E3%80%81%E7%A8%B2%E5%9E%A3%E5%90%BE%E9%83%8E%E3%81%8C%E5%AD%90%E3%81%A9%E3%82%82%E3%81%AB%E3%80%8C%E3%83%91%E3%83%91%E3%81%A0%E3%82%88%E3%83%BC%E3%80%8D%E3%81%A8%E3%83%89%E3%83%83%E3%82%AD%E3%83%AA%E7%99%BA%E8%A8%80%20https://news.ameba.jp/entry/20180214-742/">
+                  <button class="_1eDFe _1gNkA">
+                    <amp-img alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/line.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+                      <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/line.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+                      <noscript>
+                        <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/line.svg" width="24">
+                      </noscript>
+                    </amp-img>
+                  </button>LINE</a>
+              </li>
+              <li class="_2La-_">
+                <a class="_1xy_s" data-vars-section-id="social-share" data-vars-service-id="hatebu" href="http://b.hatena.ne.jp/add?url=https://news.ameba.jp/entry/20180214-742/">
+                  <button class="_1eDFe _1bXPV">
+                    <amp-img alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/hatenablog.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+                      <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/hatenablog.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;"
+                        i-amphtml-layout="fixed"></amp-img>
+                      <noscript>
+                        <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/hatenablog.svg" width="24">
+                      </noscript>
+                    </amp-img>
+                  </button>はてブ</a>
+              </li>
+              <li class="_2La-_">
+                <a class="_1xy_s" data-vars-section-id="social-share" data-vars-service-id="twitter" href="https://twitter.com/intent/tweet?text=%E5%A4%A7%E5%92%8C%E7%94%B0%E7%BE%8E%E5%B8%86%E3%80%81%E7%A8%B2%E5%9E%A3%E5%90%BE%E9%83%8E%E3%81%8C%E5%AD%90%E3%81%A9%E3%82%82%E3%81%AB%E3%80%8C%E3%83%91%E3%83%91%E3%81%A0%E3%82%88%E3%83%BC%E3%80%8D%E3%81%A8%E3%83%89%E3%83%83%E3%82%AD%E3%83%AA%E7%99%BA%E8%A8%80%20%23%e3%82%a2%e3%83%a1%e3%83%bc%e3%83%90%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9%20https://news.ameba.jp/entry/20180214-742/">
+                  <button class="_1eDFe _3KYIv">
+                    <amp-img alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/twitter.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+                      <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/twitter.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+                      <noscript>
+                        <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/twitter.svg" width="24">
+                      </noscript>
+                    </amp-img>
+                  </button>ツイート</a>
+              </li>
+              <li class="_2La-_">
+                <a class="_1xy_s" data-vars-section-id="social-share" data-vars-service-id="facebook" href="https://www.facebook.com/dialog/feed?app_id=320165361430339&amp;display=popup&amp;link=https://news.ameba.jp/entry/20180214-742/&amp;redirect_uri=https://news.ameba.jp/entry/20180214-742/">
+                  <button class="_1eDFe _1oRUs">
+                    <amp-img alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/facebook.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+                      <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/facebook.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+                      <noscript>
+                        <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/facebook.svg" width="24">
+                      </noscript>
+                    </amp-img>
+                  </button>シェア</a>
+              </li>
+            </ul>
+            <div class="_3hdHe">
+              <p class="_3_YDD">Amebaニュースの最新記事を読もう！</p>
+              <ul class="_3VLYN">
+                <li class="_1Jir0">
+                  <a class="_2H_F7 _1davO" data-vars-section-id="social-follow" data-vars-service-id="twitter" href="https://twitter.com/ameba_official">
+                    <amp-img alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/twitter.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+                      <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/twitter.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+                      <noscript>
+                        <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/twitter.svg" width="24">
+                      </noscript>
+                    </amp-img>フォローする</a>
+                </li>
+                <li class="_1Jir0">
+                  <a class="_2H_F7 _2BIWg" data-vars-section-id="social-follow" data-vars-service-id="facebook" href="https://www.facebook.com/Ameba.official">
+                    <amp-img alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/facebook.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+                      <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/facebook.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+                      <noscript>
+                        <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/white/facebook.svg" width="24">
+                      </noscript>
+                    </amp-img>フォローする</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </main>
+        <aside class="_37Q0g">
+          <h1 class="_2i3sP">
+            <amp-img class="_27lJu i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/news.svg" width="24" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/news.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/news.svg" width="24">
+              </noscript>
+            </amp-img>この記事もおすすめ</h1>
+          <amp-iframe frameborder="0" height="100" layout="responsive" resizable="" sandbox="allow-scripts allow-same-origin allow-top-navigation allow-popups" src="https://static.aja-recommend.com/html/amp.html?ssp_code=y3CzgTykg&amp;content_id=https://news.ameba.jp/entry/20180214-742/&amp;kv.genre=other"
+            width="320" class="i-amphtml-layout-responsive i-amphtml-layout-size-defined" i-amphtml-layout="responsive">
+            <i-amphtml-sizer style="display:block;padding-top:31.2500%;"></i-amphtml-sizer>
+            <button class="_2pFDB" aria-label="もっと見る" overflow="" tabindex="0">もっと見る</button>
+            <amp-img alt="" layout="fill" placeholder="" src="https://static.aja-recommend.com/amp/transpanret.gif" class="i-amphtml-layout-fill i-amphtml-layout-size-defined" i-amphtml-layout="fill"></amp-img>
+          </amp-iframe>
+        </aside>
+        <aside class="_37Q0g">
+          <h1 class="_2i3sP">
+            <amp-img class="_27lJu i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/news.svg" width="24" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/news.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/news.svg" width="24">
+              </noscript>
+            </amp-img>最新トピックス</h1>
+          <amp-list height="308" layout="fixed-height" single-item="" src="https://ad.pr.ameba.jp/tpc/list/4fCjR?v=4&amp;s=true&amp;service=3807314729&amp;sort=postDt&amp;limit=5&amp;p=CLIENT_ID(P)" width="auto" items=".">
+            <div class="_2hmkt" fallback="">データが取得できませんでした。</div>
+            <template type="amp-mustache">{{#topics}}
+              <article class="_3uB77">
+                <a class="_12GQZ" data-adcross-type="tpc" data-vars-adcross-hash="{{hash}}" data-vars-adcross-meas-domain="{{meas_domain}}" data-vars-adcross-version="{{v}}" data-vars-section-id="new-topics" data-vars-service-id="{{title}}" href="{{target.url}}">
+                  <div class="_3WA_Z">{{#img_url}}
+                    <amp-img class="_3iX37" src="{{img_url}}?option=crop&amp;size=52" srcset="{{img_url}}?option=crop&amp;size=52 1x, {{img_url}}?option=crop&amp;size=104 2x, {{img_url}}?option=crop&amp;size=156 3x" height="52" width="52" alt="">
+                      <amp-img class="_3iX37" alt="" src="https://stat100.ameba.jp/news/common_sp/img/categoryThumb/thumb_0_1.jpg" height="52" width="52"></amp-img>
+                    </amp-img>{{/img_url}} {{^img_url}}
+                    <amp-img class="_3iX37" alt="" src="https://stat100.ameba.jp/news/common_sp/img/categoryThumb/thumb_0_1.jpg" height="52" width="52"></amp-img>{{/img_url}}</div>
+                  <div class="_3enER">
+                    <h1 class="DPgwU">{{title}}</h1>
+                    <p class="_3KFRE">
+                      <amp-timeago datetime="{{post_dt}}" height="12" layout="fixed" locale="ja" width="50">{{post_dt}}</amp-timeago>
+                    </p>
+                  </div>
+                </a>
+              </article>{{/topics}}</template>
+          </amp-list>
+          <a class="_2cl__" data-vars-section-id="new-topics-more" href="/topicsEntryList/0/">もっと見る</a>
+        </aside>
+      </div>
+      <div class="asides">
+        <aside class="_2YHPk">
+          <amp-ad type="doubleclick" data-slot="/7765/amp_amebanews_megapanel" height="280" width="336" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:336px;height:280px;" i-amphtml-layout="fixed">
+            <div placeholder=""></div>
+            <a fallback="" href="/">
+              <amp-img alt="芸能ネタ、ウワサの新商品、今日の話題を厳選してお届け。Amebaニュース。" layout="responsive" src="https://stat100.ameba.jp/news/common_sp/img/banner-news-600x500-01.png" height="250" width="300" class="i-amphtml-layout-responsive i-amphtml-layout-size-defined"
+                i-amphtml-layout="responsive">
+                <i-amphtml-sizer style="display:block;padding-top:83.3333%;"></i-amphtml-sizer>
+              </amp-img>
+            </a>
+          </amp-ad>
+        </aside>
+        <aside class="_37Q0g">
+          <h1 class="_2i3sP">
+            <amp-img class="_27lJu i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/ranking-b.svg" width="24" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/ranking-b.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/ranking-b.svg" width="24">
+              </noscript>
+            </amp-img>アクセスランキング</h1>
+          <amp-list class="_3_pRC" height="385" layout="fixed-height" src="https://api-news.ameba.jp/v1.0/categories/5/rankings?limit=5" width="auto" items=".">
+            <div class="_2hmkt" fallback="">データが取得できませんでした。</div>
+            <template type="amp-mustache">
+              <article class="_2ru6m">
+                <a class="_12GQZ" data-vars-section-id="access-ranking" data-vars-service-id="{{title}}" data-vars-order-id="{{rank}}" href="{{url}}"><span class="_25vtB">{{rank}}</span>
+                  <div class="_3WA_Z">{{#image_thumb_url}}
+                    <amp-img class="_3iX37" src="{{image_thumb_url}}?cpe=60" srcset="{{image_original_url}}?cpe=60 1x, {{image_original_url}}?cpe=120 2x, {{image_original_url}}?cpe=180 3x" height="60" width="60" alt="">
+                      <amp-img class="_3iX37" alt="" src="https://stat100.ameba.jp/news/common_sp/img/categoryThumb/thumb_0_1.jpg" height="60" width="60"></amp-img>
+                    </amp-img>{{/image_thumb_url}} {{^image_thumb_url}}
+                    <amp-img class="_3iX37" alt="" src="https://stat100.ameba.jp/news/common_sp/img/categoryThumb/thumb_0_{{rank}}.jpg" height="60" width="60"></amp-img>{{/image_thumb_url}}</div>
+                  <div class="_3enER">
+                    <h1 class="DPgwU">{{title}}</h1>
+                    <p class="_3KFRE">
+                      <amp-timeago datetime="{{public_datetime}}" height="12" layout="fixed" locale="ja" width="50">{{public_datetime}}</amp-timeago>
+                    </p>
+                  </div>
+                </a>
+              </article>
+            </template>
+          </amp-list>
+          <a class="_2cl__" data-vars-section-id="access-ranking-more" href="/ranking/access/daily/">もっと見る</a>
+        </aside>
+        <aside class="_2YHPk _3_7Ns">
+          <amp-ad type="doubleclick" data-slot="/7765/amp_amebanews_secondrectangle" height="280" width="336" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:336px;height:280px;" i-amphtml-layout="fixed">
+            <div placeholder=""></div>
+            <a fallback="" href="/">
+              <amp-img alt="最新ニュースからお役立ちコラムまで、今日の話題を厳選してお届け。Amebaニュース。" layout="responsive" src="https://stat100.ameba.jp/news/common_sp/img/banner-news-600x500-02.png" height="250" width="300" class="i-amphtml-layout-responsive i-amphtml-layout-size-defined"
+                i-amphtml-layout="responsive">
+                <i-amphtml-sizer style="display:block;padding-top:83.3333%;"></i-amphtml-sizer>
+              </amp-img>
+            </a>
+          </amp-ad>
+        </aside>
+      </div>
+    </div>
+    <amp-sidebar class="_1bg1A i-amphtml-layout-nodisplay" id="sidebar" layout="nodisplay" style="display:none;" i-amphtml-layout="nodisplay">
+      <p>
+        <a class="_2P8qa" href="https://lo.ameba.jp/v1/WnUIfnAxudkAWetfxcwk">Ameba新規会員登録</a>
+      </p>
+      <ul class="_3weYZ">
+        <li class="_2jyxD">
+          <a class="_3uDam" data-vars-section-id="menu" data-vars-service-id="top" href="/">
+            <amp-img class="_3hvRv i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/home.svg" width="19" style="width:19px;height:19px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/home.svg" width="19" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:19px;height:19px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="19" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/home.svg" width="19">
+              </noscript>
+            </amp-img>トップ</a>
+        </li>
+        <li class="_2jyxD">
+          <a class="_3uDam" data-vars-section-id="menu" data-vars-service-id="topics" href="/topicsEntryList/0/">
+            <amp-img class="_3hvRv i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/news.svg" width="19" style="width:19px;height:19px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/news.svg" width="19" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:19px;height:19px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="19" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/news.svg" width="19">
+              </noscript>
+            </amp-img>トピックス</a>
+        </li>
+        <li class="_2jyxD">
+          <a class="_3uDam" data-vars-section-id="menu" data-vars-service-id="new" href="/newEntryList/">
+            <amp-img class="_3hvRv i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/pickup.svg" width="19" style="width:19px;height:19px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/pickup.svg" width="19" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:19px;height:19px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="19" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/pickup.svg" width="19">
+              </noscript>
+            </amp-img>新着</a>
+        </li>
+        <li class="_2jyxD">
+          <a class="_3uDam" data-vars-section-id="menu" data-vars-service-id="access-ranking" href="/ranking/access/daily/">
+            <amp-img class="_3hvRv i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/ranking-b.svg" width="19" style="width:19px;height:19px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/ranking-b.svg" width="19" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:19px;height:19px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="19" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/ranking-b.svg" width="19">
+              </noscript>
+            </amp-img>アクセスランキング</a>
+        </li>
+        <li class="_2jyxD">
+          <a class="_3uDam" data-vars-section-id="menu" data-vars-service-id="image-ranking" href="/ranking/imageAccess/daily/">
+            <amp-img class="_3hvRv i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/camera.svg" width="19" style="width:19px;height:19px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/camera.svg" width="19" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:19px;height:19px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="19" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/amebanews/camera.svg" width="19">
+              </noscript>
+            </amp-img>写真ランキング</a>
+        </li>
+        <li class="_2jyxD">
+          <a class="_3uDam" href="/uninstall-service-worker.html">
+            <amp-img class="_3hvRv i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/close.svg" width="19" style="width:19px;height:19px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="19" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/close.svg" width="19" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:19px;height:19px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="19" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/close.svg" width="19">
+              </noscript>
+            </amp-img>試験モードを終了する</a>
+        </li>
+      </ul>
+      <form class="_27yWm" method="get" action="/search" target="_top">
+        <p class="_1L6bd">
+          <label>
+            <amp-img class="_17r99 i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/search.svg" width="24" style="width:24px;height:24px;" i-amphtml-layout="fixed">
+              <amp-img alt="" fallback="" height="24" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/search.svg" width="24" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:24px;height:24px;" i-amphtml-layout="fixed"></amp-img>
+              <noscript>
+                <img alt="" height="24" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/search.svg" width="24">
+              </noscript>
+            </amp-img>ニュース検索</label>
+        </p>
+        <div class="_1XxCx">
+          <input class="wg6Jv" name="query" placeholder="">
+          <button class="_1hCme" type="submit" data-vars-section-id="search">検索</button>
+        </div>
+      </form>
+      <div class="_1Lfy4">
+        <amp-img class="EBMDw i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="72" src="https://c.stat100.ameba.jp/official/sp/img/sidebar-ameba-logo.png" width="72" style="width:72px;height:72px;" i-amphtml-layout="fixed"></amp-img>
+        <div class="_3DZDE">
+          <p class="_2ZtUX">Ameba公式ツイッターで最新芸能ニュースを配信中!</p>
+          <a class="rMmPj" href="https://twitter.com/intent/follow?screen_name=ameba_official">フォローする</a>
+        </div>
+      </div>
+    </amp-sidebar>
+    <footer class="_1Vf9J">
+      <a class="_1KkvK" href="#">
+        <amp-img class="ftfJB i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="20" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/triangle-up.svg" width="20" style="width:20px;height:20px;" i-amphtml-layout="fixed">
+          <amp-img alt="" fallback="" height="20" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/triangle-up.svg" width="20" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:20px;height:20px;" i-amphtml-layout="fixed"></amp-img>
+          <noscript>
+            <img alt="" height="20" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/triangle-up.svg" width="20">
+          </noscript>
+        </amp-img>ページトップへ戻る</a>
+      <a class="_23bKJ" href="/">
+        <amp-img class="_3j0CS i-amphtml-layout-fixed i-amphtml-layout-size-defined" alt="" height="22" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/home.svg" width="22" style="width:22px;height:22px;" i-amphtml-layout="fixed">
+          <amp-img alt="" fallback="" height="22" noloading="" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/home.svg" width="22" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:22px;height:22px;" i-amphtml-layout="fixed"></amp-img>
+          <noscript>
+            <img alt="" height="22" src="https://c.stat100.ameba.jp/ameblo/symbols/v3.7.0/svg/darkgray/home.svg" width="22">
+          </noscript>
+        </amp-img>Amebaニューストップへ</a>
+      <ul class="_1DWxO">
+        <li class="_2fiyU">
+          <a class="_1kH5c" data-vars-section-id="footer" data-vars-service-id="media" href="/mediaList/">配信元一覧</a>
+        </li>
+        <li class="_2fiyU">
+          <a class="_1kH5c" data-vars-section-id="footer" data-vars-service-id="policy" href="/policy/">記事配信のポリシー</a>
+        </li>
+        <li class="_2fiyU">
+          <a class="_1kH5c" data-vars-section-id="footer" data-vars-service-id="help" href="http://helps.ameba.jp/inquiry.html">ヘルプ</a>
+        </li>
+      </ul>
+    </footer>
+    <amp-sticky-ad layout="nodisplay" class="i-amphtml-layout-nodisplay" style="display:none;" i-amphtml-layout="nodisplay">
+      <amp-ad type="doubleclick" data-slot="/7765/amp_amebanews_overlay" height="50" width="320" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:320px;height:50px;" i-amphtml-layout="fixed">
+        <div placeholder=""></div>
+        <div fallback=""></div>
+      </amp-ad>
+    </amp-sticky-ad>
+    <amp-install-serviceworker src="/amp/service-worker.js" data-iframe-src="https://news.ameba.jp/amp/install-service-worker.html" layout="nodisplay" class="i-amphtml-layout-nodisplay" style="display:none;" i-amphtml-layout="nodisplay"></amp-install-serviceworker>
+    <amp-pixel src="https://sy.ameba.jp/sync/?org=sy.ameba.jp" layout="nodisplay" class="i-amphtml-layout-nodisplay" style="display:none;" i-amphtml-layout="nodisplay"></amp-pixel>
+    <amp-analytics type="googleanalytics" class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:1px;height:1px;" i-amphtml-layout="fixed">
+      <script type="application/json">
+        {
+          "requests": {
+            "pageviewWithCd1Cd2": "${pageview}&cd1=${cd1}&cd2=${userAgent}"
+          },
+          "vars": {
+            "account": "UA-59831110-2"
+          },
+          "extraUrlParams": {
+            "cd3": true
+          },
+          "triggers": {
+            "trackPageviewWithCd1Cd2": {
+              "on": "visible",
+              "request": "pageviewWithCd1Cd2",
+              "vars": {
+                "cd1": "weblog"
+              }
+            },
+            "trackNewsReadingRatio": {
+              "on": "visible",
+              "selector": "#news-entry-end",
+              "request": "event",
+              "vars": {
+                "eventCategory": "inview",
+                "eventAction": "scroll",
+                "eventLabel": "news_detail_reading_rate"
+              }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    <amp-analytics class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:1px;height:1px;" i-amphtml-layout="fixed">
+      <script type="application/json">
+        {
+          "requests": {
+            "base": "https://ln.ameba.jp/v2/ra/zBymKrvv?qr=${documentReferrer}&qt=${ampdocUrl}&category_id=${category}&sub_category_id=${subCategory}&qpi=${qpi}",
+            "pageview": "${base}&qat=view",
+            "click": "${base}&qat=tap&section_id=${sectionId}&order_id=${orderId}&display_position=${displayPosition}&service_id=${serviceId}&content_id=${contentId}&category_id=${categoryId}&sub_category_id${subCategoryId}"
+          },
+          "vars": {
+            "qpi": "media_amebanews-topics",
+            "category": "ブログ発"
+          },
+          "extraUrlParams": {
+            "qv": "1-19-0"
+          },
+          "transport": {
+            "beacon": false,
+            "xhrpost": false,
+            "image": true
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            },
+            "trackClick": {
+              "on": "click",
+              "selector": "[data-vars-section-id]",
+              "request": "click"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    <amp-analytics class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:1px;height:1px;" i-amphtml-layout="fixed">
+      <script type="application/json">
+        {
+          "requests": {
+            "base": "https://api-news.ameba.jp/v1.0/measure",
+            "pageview": "${base}/${entryId}",
+            "imageview": "${base}/${entryId}/images"
+          },
+          "vars": {
+            "entryId": "20180214-742"
+          },
+          "transport": {
+            "beacon": false,
+            "xhrpost": true,
+            "image": false
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            },
+            "trackImageClick": {
+              "on": "click",
+              "selector": "#news-entry-figure",
+              "request": "imageview"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    <amp-analytics class="i-amphtml-layout-fixed i-amphtml-layout-size-defined" style="width:1px;height:1px;" i-amphtml-layout="fixed">
+      <script type="application/json">
+        {
+          "requests": {
+            "base": "https://${adcrossMeasDomain}",
+            "adc": "${base}/own/meas/click?v=${adcrossVersion}&hash=${adcrossHash}",
+            "tpc": "${base}/tpc/meas/click?v=${adcrossVersion}&hash=${adcrossHash}"
+          },
+          "transport": {
+            "beacon": false,
+            "xhrpost": false,
+            "image": true
+          },
+          "triggers": {
+            "trackAdcClick": {
+              "on": "click",
+              "selector": "[data-adcross-type=\"adc\"]",
+              "request": "adc"
+            },
+            "trackTpcClick": {
+              "on": "click",
+              "selector": "[data-adcross-type=\"tpc\"]",
+              "request": "tpc"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://news.ameba.jp/entry/20180214-742/"
+        },
+        "headline": "大和田美帆、稲垣吾郎が子どもに「パパだよー」とドッキリ発言",
+        "datePublished": "2018-02-14T08:39:56.000Z",
+        "dateModified": "2018-02-14T08:39:56.000Z",
+        "author": {
+          "@type": "Person",
+          "name": "weblog"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Ameba News [アメーバニュース]",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://stat100.ameba.jp/news/common_sp/img/logo.png",
+            "width": 266,
+            "height": 50
+          }
+        },
+        "image": ["https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg?cax=696-392", "https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg?cax=696-522", "https://stat.ameba.jp/news_images/20180214/17/e0/Ot/j/o11130620oo.jpg?cpd=696"]
+      }
+    </script>
+  </body>
+
+</html>
